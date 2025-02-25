@@ -30,4 +30,4 @@ Example (JavaScript):
 const response = await fetch('http://localhost:5000/reports');
 const data = await response.json();  // You can now use data as you would any variable to output to console or a front end
 
-[Contribution guidelines for this project](UML.png)
+![Contribution guidelines for this project](UML.png)
