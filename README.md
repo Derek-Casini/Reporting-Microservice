@@ -6,6 +6,7 @@ If you would like to make a different style of report, add to const chartTypes i
 
 To REQUEST from reporting-microservice, you will be creating a new report: Use a fetch to 'http://localhost:5000/reports/generate'. This fetch should be a POST with content type 'application/json' and should have a body which contains reportType, a title, categories for your chart, and what values each respective category has.
 Example (JavaScript): 
+```
 const response = await fetch('http://localhost:5000/reports/generate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -17,17 +18,19 @@ const response = await fetch('http://localhost:5000/reports/generate', {
     })
 });
 const data = await response.json();
-
+```
 
 There are a few options if you would like to RECIEVE data from reporting-microservice
 
 Recieve a specific report (gives you the actual png): You must make a fetch to 'http://localhost:5000/reports/reportId' for the desired report id. 
 Example (JavaScript):
+```
 const response = await fetch(`http://localhost:5000/reports/${reportId}`);  // Assuming you have a variable reportId to store your desired report id
-
+```
 Recieve all reports (gives a JSON of all reports): Make a fetch to 'http://localhost:5000/reports'.
 Example (JavaScript): 
+```
 const response = await fetch('http://localhost:5000/reports');
 const data = await response.json();  // You can now use data as you would any variable to output to console or a front end
-
+```
 ![Contribution guidelines for this project](UML.png)
